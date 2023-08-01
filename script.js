@@ -5,20 +5,16 @@
 function calculaIdade(event) {
 
     event.preventDefault()
-    console.log("funciono!!!!!!!!!!!!");
 
     let dadosUsuario = pegarValores();
 
     let ano = calcular(dadosUsuario.ano)
 
-    let classificacaoIdade = classificarIdade(ano);
+    classificarIdade(ano);
 
     console.log(classificarIdade(ano));
 
 
-
-
-    // let idade = calcular(dadosUsuario)
 }
 
 
@@ -76,83 +72,3 @@ function classificarIdade(idade) {
 }
 
 
-//organizar as informações
-// function organizarDados(dadosUsuario, valorIdade, classificarIdade) {
-
-
-//     let dadosUsuarioAtualizado = {
-//         ...dadosUsuario,
-//         classificacao: classificarIdade,
-//         idade: valorIdade
-//     }
-
-//     console.log(dadosUsuarioAtualizado);
-
-//     return dadosUsuarioAtualizado;
-// }
-
-
-// salvar dados na lista
-
-// function cadastrarUsuario(usuario) {
-
-//     let listaUsuarios = [];
-
-//     // if (localStorage.getItem("usuariosCadastrados") == true) {
-//     // quando nao tem comparacao, ele identifica como == true
-//     if (localStorage.getItem("usuariosCadastrados")) {
-//         listaUsuarios = JSON.parse(localStorage.getItem("usuariosCadastrados"));
-//     }
-
-
-//     //pegando o usuario e passando pra lista
-//     listaUsuarios.push(usuario)
-
-//     localStorage.setItem("usuariosCadastrados", JSON.stringify(listaUsuarios))
-
-//     // setItem altera o localStorage
-// }
-
-
-
-// listar
-
-// function carregarUsuarios() {
-//     let listaUsuarios = [];
-
-//     if (localStorage.getItem("usuariosCadastrados")) {
-//         listaUsuarios = JSON.parse(localStorage.getItem("usuariosCadastrados"));
-//     }
-
-//     if (listaUsuarios.length == 0) {
-//         let tabela = document.getElementById("corpo-tabela");
-
-//         tabela.innerHTML = ` <tr class="linha-mensagem"> <td colspan="6">Nenhum usuário cadastrado!</td> </tr> `
-//     } else {
-
-//         montarTabela(listaUsuarios);
-//     }
-// }
-
-
-// window.addEventListener('DOMContentLoaded', () => carregarUsuarios());
-
-
-// mostrar resultado
-// function montarTabela(listaDeCadastrados) {
-//     let tabela = document.getElementById("corpo-tabela");
-
-//     let template = '';
-
-//     listaDeCadastrados.forEach(pessoa => {
-
-//         template +=
-//             ` <tr>
-//             <td data-cell="nome">${pessoa.nome}</td>
-//             <td data-cell="idade">${pessoa.idade}</td>
-//         </tr> `
-
-//     });
-
-//     tabela.innerHTML = template;
-// }
